@@ -17,10 +17,6 @@ set _CONDA_BIN_DIR (echo $_CONDA_ROOT_DIR"/bin")
 if [ $argc = '1' ]
 	switch $argv
 		case "install"
-			echo $_THIS_DIR
-			echo $_CONDA_ROOT_DIR
-			echo $_CONDA_BIN_DIR
-			echo $_FISH_FUNCTIONS_DIR
 			cp $_THIS_DIR/conda/activate.fish $_CONDA_BIN_DIR
 			cp $_THIS_DIR/conda/activate.fish.py $_CONDA_BIN_DIR
 			cp $_THIS_DIR/conda/deactivate.fish $_CONDA_BIN_DIR
@@ -34,8 +30,6 @@ if [ $argc = '1' ]
 			funcsave deactivate
 			exit
 		case "uninstall"
-			echo $_CONDA_ROOT_DIR
-			echo $_FISH_FUNCTIONS_DIR
 			rm -rf $_CONDA_BIN_DIR/activate.fish
 			rm -rf $_CONDA_BIN_DIR/activate.fish.py
 			rm -rf $_CONDA_BIN_DIR/deactivate.fish
