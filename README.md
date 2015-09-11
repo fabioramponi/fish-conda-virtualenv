@@ -18,6 +18,6 @@ Now from a fish shell you can activate a conda virtual environment with the comm
 ```
 and deactivate it with
 ```fish
->> source (deactivate) <conda-env>
+>> source (deactivate)
 ```
 
