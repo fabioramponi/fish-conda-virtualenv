@@ -6,7 +6,7 @@ conda add-in that permits to activate/deactivate virtualenvs from a fish shell
 - fish shell
 
 ## Install instructions
-From the fish shell cd to the root dir, the type
+From the fish shell cd to this project dir, then type
 ```fish
 >> fish conda-env.sh install
 ```
