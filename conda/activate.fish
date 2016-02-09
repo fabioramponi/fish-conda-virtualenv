@@ -65,6 +65,5 @@ else
 end
 
 run_scripts "activate"
-hash -r
 
 
