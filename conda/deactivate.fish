@@ -1,7 +1,11 @@
 #!/usr/local/bin/fish
 
+function get_realpath
+    echo (python -c 'from __future__ import print_function;import os,sys;print(os.path.realpath(sys.argv[1]))' $argv)
+end
+
 function get_dirname -d 'get the dir containing the given file'
-	echo (realpath (dirname $argv[1]))
+	echo (get_realpath (dirname $argv[1]))
 end
 
 function run_scripts -d 'run all scripts in a directory'
