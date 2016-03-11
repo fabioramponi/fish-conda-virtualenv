@@ -1,5 +1,9 @@
+function get_realpath
+    echo (python -c "from __future__ import print_function;import os,sys;print(os.path.realpath(sys.argv[1]))" $argv[1])
+end
+
 function get_dirname -d 'get the dir containing the given file'
-	echo (realpath (dirname $argv[1]))
+	echo (get_realpath (dirname $argv[1]))
 end
 
 function print_help 
@@ -10,7 +14,7 @@ end
 set argc (echo (count $argv))
 
 set _THIS_DIR (get_dirname (status --current-filename))
-set _FISH_FUNCTIONS_DIR (realpath ~/.config/fish/functions)
+set _FISH_FUNCTIONS_DIR (get_realpath ~/.config/fish/functions)
 set _CONDA_ROOT_DIR (python -c "from __future__ import print_function; from conda.config import root_dir; print(root_dir)")
 set _CONDA_BIN_DIR (echo $_CONDA_ROOT_DIR"/bin")
 
